@@ -23,6 +23,7 @@ public class ProjectConfig {
     public Cloudinary getCloudinary() {
         Map<String, String> config = new HashMap();
 
+        // Create account on https://cloudinary.com
         // Configure Cloudinary with credentials
         config.put("cloud_name","");
         config.put("api_key","");
