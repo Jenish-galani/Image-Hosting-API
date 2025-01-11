@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.xml.transform.OutputKeys;
 import java.util.Map;
 
-@RestController
-@RequestMapping("cloud/upload")
+@RestController  // 📱 Marks this class as a REST controller for handling HTTP requests
+@RequestMapping("cloud/upload")  // 📂 Base URL for image upload endpoint
 public class CloudinaryImageUploadController {
-    @Autowired
+
+    @Autowired  // 🤝 Injects CloudinaryImageService to handle image uploads
     private CloudinaryImageService cloudinaryImageService;
 
-    @PostMapping
-    public ResponseEntity<Map> uploadImage(@RequestParam("image")MultipartFile file){
-        Map data = this.cloudinaryImageService.upload(file);
-        return new ResponseEntity<>(data, HttpStatus.OK);
+    @PostMapping  // 📸 Endpoint to handle image uploads
+    public ResponseEntity<Map> uploadImage(@RequestParam("image") MultipartFile file) {
+        Map data = this.cloudinaryImageService.upload(file);  // 🔄 Calls service to handle image upload
+        return new ResponseEntity<>(data, HttpStatus.OK);  // 🎉 Returns response with uploaded image data
     }
 }
