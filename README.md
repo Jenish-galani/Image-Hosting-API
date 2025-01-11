@@ -18,6 +18,7 @@
 - Java 17+
 - Maven
 - MySQL Database
+- Cloudinary server
 
 # 🏗️ Project Structure
 - Image-Hosting-Spring-Boot/
