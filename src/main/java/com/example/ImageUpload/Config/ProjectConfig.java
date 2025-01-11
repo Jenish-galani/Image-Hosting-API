@@ -23,9 +23,10 @@ public class ProjectConfig {
     public Cloudinary getCloudinary() {
         Map<String, String> config = new HashMap();
 
-        config.put("cloud_name","dlg7ewtsy");
-        config.put("api_key","813586433122613");
-        config.put("api_secret","TEASkVH4M-hfwoivrdEv1tN2vX8");
+        // Configure Cloudinary with credentials
+        config.put("cloud_name","");
+        config.put("api_key","");
+        config.put("api_secret","");
 
         return new Cloudinary(config);
     }
