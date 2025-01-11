@@ -8,11 +8,13 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.Map;
 
-@Service
+@Service  // 📦 Marks this class as a service to handle business logic
 public class CloudinaryImageServiceImpl implements CloudinaryImageService {
-    @Autowired
+
+    @Autowired  // 🤝 Injects the Cloudinary client for image uploading
     private Cloudinary cloudinary;
 
+    // Constructor to initialize Cloudinary
     public CloudinaryImageServiceImpl(Cloudinary cloudinary) {
         this.cloudinary = cloudinary;
     }
@@ -20,9 +22,11 @@ public class CloudinaryImageServiceImpl implements CloudinaryImageService {
     @Override
     public Map upload(MultipartFile file) {
         try {
+            // 🔄 Uploads the image to Cloudinary and returns the response
             Map data = this.cloudinary.uploader().upload(file.getBytes(), Map.of());
             return data;
         } catch (IOException e) {
+            // 🚨 Handles any errors during the image upload process
             throw new RuntimeException("Image uploading fail !!");
         }
     }
